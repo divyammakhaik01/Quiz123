@@ -19,7 +19,7 @@ export const Register = () => {
   // const {type} = state
 
   useEffect(() => {
-    if(window.location.href === `${process.env.REACT_APP_client_url}admin/register`)
+    if(window.location.href === `${client_url}admin/register`)
       type =  true 
     else
       type =  false
@@ -47,7 +47,7 @@ export const Register = () => {
       try {
         console.log("go");
 
-        let response = await fetch(`${process.env.REACT_APP_server_url}auth/register` , {
+        let response = await fetch(`${server_url}auth/register` , {
           method : 'POST' , 
           headers:{
             "Content-type" : "Application/json" ,

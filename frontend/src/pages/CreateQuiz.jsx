@@ -69,7 +69,7 @@ export const CreateQuiz = () => {
     try {
       let token = JSON.parse(localStorage.getItem('user_info')).token
 
-      let res = await fetch(`${process.env.server_url}admin/post_data/` , {
+      let res = await fetch(`${server_url}admin/post_data/` , {
         method: 'POST' , 
         headers : {
           "Content-type" : "Application/json" ,

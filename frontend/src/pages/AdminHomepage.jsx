@@ -16,7 +16,7 @@ export const AdminHomepage = () => {
       let token = JSON.parse(localStorage.getItem('user_info')).token
       console.log(token)
   
-      let response = await fetch(`${process.env.REACT_APP_server_url}admin/get_all_url` , {
+      let response = await fetch(`${server_url}admin/get_all_url` , {
         method : 'GET' , 
         headers : {
           "Content-type" : "Application/json" ,
@@ -42,7 +42,7 @@ export const AdminHomepage = () => {
     console.log(url);
     try {
 
-      const res = await fetch(`${process.env.REACT_APP_server_url}admin/activate_url/${url}`, {
+      const res = await fetch(`${server_url}admin/activate_url/${url}`, {
         method:'PATCH',
         headers : {
           "Content-type" : "Application/json" ,
@@ -64,7 +64,7 @@ export const AdminHomepage = () => {
     let token = JSON.parse(localStorage.getItem('user_info')).token
       console.log(url);
     try {
-      const res = await fetch(`${process.env.REACT_APP_server_url}admin/deactivate_url/${url}`, {
+      const res = await fetch(`${server_url}admin/deactivate_url/${url}`, {
         method:'PATCH',
         headers : {
           "Content-type" : "Application/json" ,
@@ -114,7 +114,7 @@ export const AdminHomepage = () => {
               <div className="flex flex-row justify-between h-12 mb-2 bg-blue-100 font-bold">
                 
                 <button className="flex ml-2 font-bold rounded">
-                    {`${process.env.REACT_APP_client_url}Quiz/${_url.url}`}
+                    {`${client_url}Quiz/${_url.url}`}
                 </button>
 
 
@@ -125,13 +125,13 @@ export const AdminHomepage = () => {
                         <>
                         <button value={_url.url} onClick={activate_link} className="flex ml-2 bg-green-800	 font-bold w-12 justify-center">Yes</button>
                         <button value={_url.url} onClick={deactivate_link} className="flex ml-2 bg-red-200 font-bold w-12 justify-center ">No</button>
-                        <button value={_url.url}  onClick={((e)=>  navigator.clipboard.writeText(`${process.env.REACT_APP_client_url}Quiz/${e.target.value}`))} className="flex ml-2 bg-red-200 font-bold w-12 justify-center hover:bg-red-400 ">COPY</button>
+                        <button value={_url.url}  onClick={((e)=>  navigator.clipboard.writeText(`${client_url}Quiz/${e.target.value}`))} className="flex ml-2 bg-red-200 font-bold w-12 justify-center hover:bg-red-400 ">COPY</button>
                         </>
                       ) : (
                         <>
                         <button value={_url.url} onClick={activate_link} className="flex ml-2 bg-green-100 font-bold w-12 justify-center ">Yes</button>
                         <button value={_url.url} onClick={deactivate_link} className="flex ml-2 bg-red-800 font-bold w-12 justify-center ">No</button>
-                        <button value={_url.url}  onClick={((e)=>  navigator.clipboard.writeText(`${process.env.REACT_APP_client_url}Quiz/${e.target.value}`))} className="flex ml-2 bg-red-200 font-bold w-12 justify-center hover:bg-red-400 ">COPY</button>
+                        <button value={_url.url}  onClick={((e)=>  navigator.clipboard.writeText(`${client_url}Quiz/${e.target.value}`))} className="flex ml-2 bg-red-200 font-bold w-12 justify-center hover:bg-red-400 ">COPY</button>
                         </>
                       )
                     }
