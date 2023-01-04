@@ -19,14 +19,6 @@ const registerUser = async(req , res) => {
         }
 
         // check if already exist in DB
-        return res.json({
-            "test_1" : {
-                name , 
-                email , 
-                password , 
-                isAdmin
-            }
-        })
         const user_exist = await User.findOne({email});
 
         if(user_exist){
@@ -37,24 +29,10 @@ const registerUser = async(req , res) => {
             })
             
         }
-        return res.json({
-            "test2" : {
-                name , 
-                email , 
-                password , 
-                isAdmin
-            }
-        })
+      
 
         let hashedPassword = await bcrypt.hash(password , 2)
-        return res.json({
-            "test3" : {
-                name , 
-                email , 
-                password , 
-                isAdmin
-            }
-        })
+       
         // create user
         const user = await User.create({
             name , 
