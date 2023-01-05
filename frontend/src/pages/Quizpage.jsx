@@ -23,13 +23,13 @@ export const Quizpage = () => {
 
         // http://localhost:3000/Quiz/0296404f-7909-4e46-97b6-80839a2a5806
         // let url_update = url.replace(/3000/g , 4000);
-        let split = url.split('3000/')[1]
+        let split = url.split('3000/')
 
         
-        console.log(split)
+        console.log(split[1])
         // let new_url = server_url
         // let new_url = url.replace(/3000/g , 4000)
-        const res = await fetch(`https://quiz0123.onrender.com/${split}` , {
+        const res = await fetch(`https://quiz0123.onrender.com/${split[1]}` , {
             method : "GET" , 
             headers :{
                 'Content-type' : 'Application/json',
