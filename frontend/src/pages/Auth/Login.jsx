@@ -18,7 +18,8 @@ export const Login = () => {
         }
         try {
           console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> ||||||   " , `${server_url}auth/login` )
-          let response = await fetch(`${server_url}auth/login` , {
+          // let response = await fetch(`${server_url}auth/login` , {
+            let response = await fetch(`https://quiz0123.onrender.com/auth/login` , {
             method : 'POST' , 
             headers:{
               "Content-type" : "Application/json" ,
@@ -95,7 +96,7 @@ export const Login = () => {
 
       <div className="text-back-800 flex mt-4 ">
           Don't have an account ? 
-          <Link className="text-blue-800 font-bold" to={window.location.href === `${server_url}/login` ? "/admin/register" : "/user/register" }>Register</Link>
+          <Link className="text-blue-800 font-bold" to={window.location.href === `https://quiz0123.onrender.com/admin/login` ? "/admin/register" : "/user/register" }>Register</Link>
         </div>
 
 
