@@ -114,7 +114,7 @@ export const AdminHomepage = () => {
               <div className="flex flex-row justify-between h-12 mb-2 bg-blue-100 font-bold">
                 
                 <button className="flex ml-2 font-bold rounded">
-                    {`${client_url}Quiz/${_url.url}`}
+                    {`https://quiz0123.onrender.com/Quiz/${_url.url}`}
                 </button>
 
 
