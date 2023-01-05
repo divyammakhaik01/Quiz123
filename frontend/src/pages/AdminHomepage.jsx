@@ -16,7 +16,7 @@ export const AdminHomepage = () => {
       let token = JSON.parse(localStorage.getItem('user_info')).token
       console.log(token)
   
-      let response = await fetch(`${server_url}admin/get_all_url` , {
+      let response = await fetch(`https://quiz0123.onrender.com/admin/get_all_url` , {
         method : 'GET' , 
         headers : {
           "Content-type" : "Application/json" ,
@@ -42,7 +42,7 @@ export const AdminHomepage = () => {
     console.log(url);
     try {
 
-      const res = await fetch(`${server_url}admin/activate_url/${url}`, {
+      const res = await fetch(`https://quiz0123.onrender.com/admin/activate_url/${url}`, {
         method:'PATCH',
         headers : {
           "Content-type" : "Application/json" ,
@@ -64,7 +64,7 @@ export const AdminHomepage = () => {
     let token = JSON.parse(localStorage.getItem('user_info')).token
       console.log(url);
     try {
-      const res = await fetch(`${server_url}admin/deactivate_url/${url}`, {
+      const res = await fetch(`https://quiz0123.onrender.com/admin/deactivate_url/${url}`, {
         method:'PATCH',
         headers : {
           "Content-type" : "Application/json" ,

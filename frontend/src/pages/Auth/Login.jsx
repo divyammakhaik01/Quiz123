@@ -15,7 +15,7 @@ export const Login = () => {
         if(password !== confirmPassword){
           alert('password and confirmPassword not matching')
           return;
-        }
+        } 
         try {
           console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>> ||||||   " , `${server_url}auth/login` )
           // let response = await fetch(`${server_url}auth/login` , {
