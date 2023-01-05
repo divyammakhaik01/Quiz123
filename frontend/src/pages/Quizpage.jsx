@@ -18,18 +18,18 @@ export const Quizpage = () => {
             alert("Not Authorized")
             return
         } 
-        let str = "apple./mango"
+        // let str = "apple./mango"
         // let new_str = str.replace(/http://localhost:3000/g , "apple")
 
         // http://localhost:3000/Quiz/0296404f-7909-4e46-97b6-80839a2a5806
         // let url_update = url.replace(/3000/g , 4000);
-        let split = url.split('3000/')
+        // let split = url.split('3000/')
 
         
-        console.log(split[1])
+        console.log(url)
         // let new_url = server_url
         // let new_url = url.replace(/3000/g , 4000)
-        const res = await fetch(`https://quiz0123.onrender.com/${split[1]}` , {
+        const res = await fetch(`${url}` , {
             method : "GET" , 
             headers :{
                 'Content-type' : 'Application/json',
